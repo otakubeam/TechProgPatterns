@@ -77,6 +77,18 @@ void City::AddFood(int dif) {
     overallFood += dif;
 }
 
+int City::GetPopulation() {
+    return population;
+}
+
+int City::GetHeat() {
+    return overallHeat;
+}
+
+int City::GetFood() {
+    return overallFood;
+}
+
 bool City::IsAlive() {
     return population > 0;
 }
@@ -91,11 +103,3 @@ void HuntersHut::Work() {
     City::GetInstance().AddFood(forage);
 }
 
-int main() {
-
-    while (City::GetInstance().IsAlive()) {
-        City::GetInstance().NextTurn();
-    }
-
-    return 0;
-}

@@ -21,6 +21,9 @@ public:
     void NextTurn();
     void AddHeat(int);
     void AddFood(int);
+    int GetPopulation();
+    int GetHeat();
+    int GetFood();
     bool IsAlive();
 private:
     City() {}
