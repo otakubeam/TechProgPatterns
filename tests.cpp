@@ -33,18 +33,10 @@ void TestCity() {
         failed = true;
     }
 
-    int prevFood = City::GetInstance().GetFood();
-    int nextFoodExprected = prevFood - City::GetInstance().GetPopulation();
-    City::GetInstance().NextTurn();
-    if (City::GetInstance().GetFood() != nextFoodExprected) {
-        std::cout << "TestCity NextTurnFood fail" << std::endl;
-        failed = true;
-    }
-
     Heater h;
     int prevHeat = City::GetInstance().GetHeat();
     h.Work();
-    if (prevHeat + 2 != City::GetInstance().GetHeat()) {
+    if (prevHeat + 4 != City::GetInstance().GetHeat()) {
         std::cout << "TestCity Heater fail" << std::endl;
         failed = true;
     }
@@ -56,8 +48,8 @@ void TestCity() {
 
 
 int main() {
-    TestFactory();
     TestCity();
+    TestFactory();
 
     return 0;
 }
